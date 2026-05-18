@@ -5,7 +5,7 @@ import torch.nn as nn
 
 # BUILD UNET MODEL
 def build_unet_model(
-    encoder_name="efficientnet-b0",
+    encoder_name="resnet34",
     encoder_weights="imagenet",
     in_channels=4,
     classes=1
