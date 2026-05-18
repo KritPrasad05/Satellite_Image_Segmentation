@@ -1,0 +1,63 @@
+# =========================================
+# DATASET CONFIGURATION
+# =========================================
+dataset:
+  image_size: 512
+  num_workers: 0
+
+# =========================================
+# MODEL CONFIGURATION
+# =========================================
+
+
+model:
+  name: "unet" # Options: "unet", "unetplusplus"
+  encoder_name: "efficientnet-b0"
+  encoder_weights: "imagenet"
+  in_channels: 4
+  classes: 1
+
+# =========================================
+# TRAINING CONFIGURATION
+# =========================================
+
+training:
+  batch_size: 2
+  epochs: 10
+  learning_rate: 0.001
+  device: "cuda"
+  mixed_precision: false
+  seed: 42
+
+# =========================================
+# SCHEDULER CONFIGURATION
+# =========================================
+scheduler:
+  name: "cosine"
+
+# =========================================
+# LOSS CONFIGURATION
+# =========================================
+
+loss:
+  focal_weight: 1.0
+  dice_weight: 1.0
+
+# =========================================
+# CHECKPOINTS
+# =========================================
+
+checkpoint:
+  save_dir: "outputs/unetplusplus/checkpoints"
+
+# =========================================
+# OUTPUTS
+# =========================================
+
+outputs:
+  prediction_dir: "outputs/unetplusplus/predictions"
+
+  figures_dir: "outputs/figures"
+
+  logs_dir: "outputs/logs"
+
